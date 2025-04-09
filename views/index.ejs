@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Tracker</title>
+
+    <!-- Leaflet CSS (for map styling) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Inline CSS for styling map and page -->
+    <style>
+        /* Fullscreen map container */
+        #map { 
+            height: 100vh; /* 100% of the viewport height */
+            width: 100%;    /* 100% of the viewport width */
+            z-index: 1;     /* ensures map appears properly */
+        }
+
+        /* Remove any default margin/padding on body */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Map will be displayed here -->
+    <div id="map"></div>
+
+    <!-- ========== SCRIPTS ========== -->
+
+    <!-- 1. Load Leaflet JS (mapping library) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- 2. Load Socket.IO client from server (real-time connection with backend) -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- 3. Your custom frontend JS (handles location and socket events) -->
+    <script src="/script.js"></script>
+
+    <!-- 
+        This is an EJS comment (will not be shown in browser source).
+        Since we’ve used:
+        `app.use(express.static(path.join(__dirname, 'public')))`
+        in our server-side code, 
+        Express knows to serve files like:
+        - script.js
+        - styles.css (if any)
+        directly from the `/public` folder.
+    -->
+</body>
+</html>
